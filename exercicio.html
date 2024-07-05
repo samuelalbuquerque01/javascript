@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+    <script>
+
+let emails = [
+  'email1@email.com',
+  'email2@email.com',
+  'email3@email.com',
+];
+
+let senhas = [
+  '0',
+  '1',
+  '2',
+];
+
+let autenticado = false; 
+
+for (;;) {
+  let email = prompt('Digite o e-mail:');
+  let senha = prompt('Digite a senha:');
+
+  let emailIndex = emails.indexOf(email);
+  let senhaIndex = senhas.indexOf(senha);
+  autenticado = emailIndex !==  -1 && emailIndex === senhaIndex;
+
+  if (!autenticado) {
+    alert('Email ou senha incorretos.');
+  } else {
+    alert('Autenticado com sucesso!');
+    break; 
+  }
+}
+
+
+
+       
+    </script>
+</head>
+<body>
+    
+
+
+</body>
+</html>

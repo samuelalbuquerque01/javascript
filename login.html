@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script>
+        let emailCadastrado = prompt("Cadastre um email");
+        let senhaCadastrada = prompt("Crie uma senha");
+        console.log("Usuário cadastrado com sucesso");
+
+        let emailLogin = prompt("Digite o email que você cadastrou");
+        let senhaLogin;
+        let tentativas = 2; 
+        let bloqueado = false;
+
+        while (tentativas > 0) {
+        senhaLogin = prompt("Informe sua senha");
+
+        if (bloqueado) {
+        console.log("Você foi bloqueado. Tente novamente mais tarde.");
+        alert("Você foi bloqueado. Tente novamente mais tarde.");
+        break;
+         }
+
+         if (emailCadastrado === emailLogin && senhaCadastrada === senhaLogin) {
+        console.log("Login efetuado com sucesso");
+        alert("Login efetuado com sucesso"); 
+        } else {
+        tentativas--;
+
+        if (tentativas > 0) {
+            console.log(`Senha incorreta. Você ainda tem ${tentativas} tentativa(s) restante(s).`);
+            alert(`Senha incorreta. Você ainda tem ${tentativas} tentativa(s) restante(s).`);
+        } else {
+            console.log("Você excedeu o número de tentativas. Você será bloqueado.");
+            alert("Você excedeu o número de tentativas. Você será bloqueado.");
+            bloqueado = true;
+        }
+    }
+    }   
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
